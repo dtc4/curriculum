@@ -1,0 +1,244 @@
+/* Core Styles */
+
+*{
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+	background-color: #333;
+	color: white;
+	font-size: 1.1em;
+	line-height: 1.5;
+	text-align: center;
+}
+
+img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+h1, h2, h3, p{
+	padding: 1em 0;
+}
+
+/* Nav Headre */
+
+.navbar{
+	background: #333;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.navbar_header{
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar_menu_mobile{
+	color: #2690d4;
+	padding: 5px;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar_container{
+	position: absolute;
+	background: #333;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	height: 0px;
+	overflow: hidden;
+	transition: height 0.4s ease;
+	margin-block-start: 0;
+	padding-inline-start: 0;
+}
+
+.navbar li{
+	list-style: none;
+}
+
+.navbar a{
+	text-decoration: none;
+}
+
+.navbar_link{
+	color: white;
+}
+
+#navbar_header:target .navbar_container{
+	height: 300px;
+}
+
+#navbar_header:target .open{
+	display: none;
+}
+
+#navbar_header:target .close{
+	display: flex;
+}
+
+.close{
+	display: none;
+}
+
+.navbar_items:hover .navbar_link {
+    color: #2690d4;
+}
+
+/* Showcase */
+
+#showcase{
+	margin-top: 70px;
+	min-height: 550px;
+}
+
+#showcase .bg_image{
+	position: absolute;
+	background: #333 url("fondo.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.6;
+}
+
+#showcase h1{
+	padding-top: 30px;
+	padding-bottom: 0px;
+}
+
+#showcase .content_wrap{
+	padding:  0 1.5em;
+}
+  
+/* Section section_about_me */
+
+#section_about_me{
+	background: #eaeaea;
+	color: #333;
+	padding-bottom: 2em;
+	
+}
+
+#section_about_me .content_wrap{
+	padding:  0 1.5em;
+}
+
+/* Section b */
+
+#section_languages{
+	padding: 2em 1em 1em;
+}
+
+#section_languages ul{
+	list-style: none;
+	padding: 0;
+}
+
+#section_languages li{
+	margin-bottom:  1em;
+	background: white;
+	color: #333;
+}
+
+.card_content{
+	padding: 1.5em;
+}
+
+/* Section C */
+
+#section_hobbies{
+	background: white;
+	color: #333;
+	padding: 2em;
+}
+
+/* Section D */
+
+#section_contact .box{
+	background: #333;
+	color: white;
+	padding: 2em;
+}
+
+#section_contact .box:first-child{
+	background: #2690d4;
+}
+
+/* Footer */
+#main_footer{
+	padding: 1em;
+	background: #000;
+	color: white;
+}
+
+/*Media Queries */
+
+@media(min-width: 700px){
+
+	.navbar{
+		display: flex;
+		
+	}
+	
+	.navbar_container{
+		height: 50px;
+		flex-direction: row;
+		position: static;
+	}
+
+	.navbar_menu_mobile{
+		display: none;
+	}
+
+	.grid{
+		display: grid;
+		grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+	}
+
+	#section_about_me .content_text{
+		columns: 2;
+		column-gap: 4em;
+	}
+
+	#section_about_me .content_text p{
+		padding-top: 0;
+		text-align: left;
+	}
+
+	.content_wrap, 
+	#section_languages ul{
+		grid-column: 2/4;
+	}
+
+	.box, #main_footer p{
+		grid-column:  span 2;
+	}
+
+	#section_languages ul{
+		display: flex;
+		justify-content: space-around;
+	}
+
+	#section_languages li{
+		width: 31%;
+	}
+}
+
+
+
+
